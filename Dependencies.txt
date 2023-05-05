@@ -1,0 +1,20 @@
+DiscoverServices:
+	Deverloper Tools: Spring Boot DevTools 
+	Ops: Spring Boot Actuator
+	Spring Cloud Discovery: Eureka Server
+
+ApplicationService:
+	Deverloper Tools: Spring Boot DevTools
+	Web: Spring Web
+	Ops: Spring Boot Actuator
+	Spring Cloud Discovery: Eureka Discovery Client
+
+Client:
+	Deverloper Tools: Spring Boot DevTools
+	Web: Spring Web
+	Ops: Spring Boot Actuator
+	Spring Cloud Discovery: Eureka Discovery Client
+
+Gateway:
+	Spring Cloud Discovery: Eureka Discovery Client
+	Spring Cloud Routing: Gateway
