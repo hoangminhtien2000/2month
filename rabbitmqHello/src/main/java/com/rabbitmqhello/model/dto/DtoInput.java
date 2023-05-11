@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class DtoInput {
-    private String name;
+    private String names;
     private String age;
     private String gender;
     private String country;
@@ -14,7 +14,7 @@ public class DtoInput {
 
     @Override
     public String toString() {
-        return "DtoInput [Name=" + name + ", Age=" + age + ", Gender=" + gender + ", Country=" + country + ", Address=" + address + "]";
+        return "DtoInput [Name=" + names + ", Age=" + age + ", Gender=" + gender + ", Country=" + country + ", Address=" + address + "]";
     }
 
 }

@@ -8,12 +8,12 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Student {
+public class StudentHealthInsurance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String names;
-    private int age;
-    private String gender;
+    private String studentNames;
+    private String healthInsuranceSchemeName;
+    private int coverageAmount;
 
 }
