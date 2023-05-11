@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  rabbitmq:
+    container_name: rabbit
+    image: rabbitmq:latest
+    hostname: my-rabbit
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+#  sender:
+#    build: ./sender
+#    container_name: sender
+#    ports:
+#      - "2222:2222"
+#    volumes:
+#      - ./sender:/sender
+#    depends_on:
+#      - rabbitmq
+#  receiver:
+#    build: ./receiver
+#    container_name: receiver
+#    ports:
+#      - "1111:1111"
+#    volumes:
+#      - ./receiver:/receiver
+#    depends_on:
+#      - sender
+#      - rabbitmq

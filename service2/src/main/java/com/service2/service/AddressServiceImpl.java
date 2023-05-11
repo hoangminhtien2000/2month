@@ -1,6 +1,5 @@
 package com.service2.service;
 
-
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.service2.model.Address;
@@ -51,7 +50,6 @@ public class AddressServiceImpl implements SaveAddress {
             address.setAddress(dtoInput.getAddress());
             addressRepo.save(address);
         }
-
         return  statusCode;
     }
 

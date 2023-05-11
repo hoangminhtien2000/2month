@@ -1,0 +1,4 @@
+rabbitmq:
+  image: rabbitmq:latest
+  ports:
+    - "7070:15672"

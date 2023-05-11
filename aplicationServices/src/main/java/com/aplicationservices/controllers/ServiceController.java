@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
+
 @RequestMapping("/service1")
 @RestController
 public class ServiceController {
@@ -28,7 +31,7 @@ public class ServiceController {
 
 
     @PostMapping("/send")
-    public String sendAddress(@RequestBody DtoInput dtoInput){
+    public String sendAddress(@RequestBody DtoInput dtoInput) throws IOException, TimeoutException {
         return sendAddress.sendAddress(dtoInput);
     }
 
