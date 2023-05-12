@@ -12,9 +12,4 @@ public class DtoInput {
 //    private String numberCard;
 //    private String issuedBy;
 
-    @Override
-    public String toString() {
-        return "DtoInput [Name=" + names + ", Age=" + age + ", Gender=" + gender + ", Country=" + country + ", Address=" + address + "]";
-    }
-
 }

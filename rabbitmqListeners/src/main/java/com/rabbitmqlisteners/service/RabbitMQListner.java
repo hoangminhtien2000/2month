@@ -16,13 +16,13 @@ public class RabbitMQListner implements MessageListener,SaveAddress {
     @Autowired
     private AddressRepo addressRepo;
 
-        @RabbitListener(queues = "${javainuse.rabbitmq.queue}")
+        @RabbitListener(queues = "${receiver.service1.queue}")
     public void onMessage(Message message) {
             String strDtoInput=new String(message.getBody());
             Gson gson = new Gson();
             DtoInput dtoInput = gson.fromJson(strDtoInput, DtoInput.class);
-            saveAddress(dtoInput);
-            System.out.println(dtoInput);
+//            saveAddress(dtoInput);
+            System.out.println("Receiver from Service1: "+dtoInput);
     }
 
     @Override

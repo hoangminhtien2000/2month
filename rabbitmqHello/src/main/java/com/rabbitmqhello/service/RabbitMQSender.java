@@ -21,7 +21,7 @@ public class RabbitMQSender {
 
     public void send(DtoOutput dtoOutput) {
         rabbitTemplate.convertAndSend(exchange, routingkey, dtoOutput);
-        System.out.println("Send msg = " + dtoOutput);
+        System.out.println("Send to Service2 = " + dtoOutput);
 
     }
 }

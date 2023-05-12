@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    @Value("${javainuse.rabbitmq.queue}")
+    @Value("${send.service2.queue}")
     String queueName;
 
     @Value("${javainuse.rabbitmq.exchange}")
@@ -26,6 +26,7 @@ public class RabbitMQConfig {
     Queue queue() {
         return new Queue(queueName, false);
     }
+
 
     @Bean
     DirectExchange exchange() {

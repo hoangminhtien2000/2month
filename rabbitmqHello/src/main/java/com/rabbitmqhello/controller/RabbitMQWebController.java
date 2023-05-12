@@ -1,9 +1,7 @@
 package com.rabbitmqhello.controller;
 import com.rabbitmqhello.model.Student;
 import com.rabbitmqhello.model.dto.DtoInput;
-import com.rabbitmqhello.model.dto.DtoOutput;
 import com.rabbitmqhello.repository.StudentRepo;
-import com.rabbitmqhello.service.RabbitMQSender;
 import com.rabbitmqhello.service.CrudStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +12,6 @@ import org.springframework.web.bind.annotation.*;
 public class RabbitMQWebController {
 
     @Autowired
-    private RabbitMQSender rabbitMQSender;
-
-    @Autowired
     private CrudStudent crudStudent;
 
 
@@ -25,13 +20,7 @@ public class RabbitMQWebController {
 
     @PostMapping()
     public String producer(@RequestBody DtoInput dtoInput) {
-
-        crudStudent.saveStudent(dtoInput);
-        DtoOutput dtoOutput=new DtoOutput();
-        dtoOutput.setAddress(dtoInput.getAddress());
-        dtoOutput.setCountry(dtoInput.getCountry());
-//        rabbitMQSender.send(dtoOutput);
-
+        crudStudent.saveSendStudent(dtoInput);
         return "Message sent to the RabbitMQ JavaInUse Successfully";
     }
 
