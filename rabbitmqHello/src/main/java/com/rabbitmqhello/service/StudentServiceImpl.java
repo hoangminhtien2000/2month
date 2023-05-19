@@ -17,6 +17,9 @@ public class StudentServiceImpl implements CrudStudent {
     @Autowired
     private RabbitMQSender rabbitMQSender;
 
+    @Autowired
+    private RabbitMQListner rabbitMQListner;
+
     @Override
     @Transactional
 //    @Transactional(isolation = Isolation.SERIALIZABLE)
@@ -30,10 +33,11 @@ public class StudentServiceImpl implements CrudStudent {
             throw new RuntimeException("thowing exception to test transaction rollback");
         }
         else {
-            DtoOutput dtoOutput=new DtoOutput();
-            dtoOutput.setAddress(dtoInput.getAddress());
-            dtoOutput.setCountry(dtoInput.getCountry());
-            rabbitMQSender.send(dtoOutput);
+//            DtoOutput dtoOutput=new DtoOutput();
+//            dtoOutput.setAddress(dtoInput.getAddress());
+//            dtoOutput.setCountry(dtoInput.getCountry());
+//            rabbitMQSender.send(dtoOutput);
+            rabbitMQSender.send(dtoInput);
         }
     }
 

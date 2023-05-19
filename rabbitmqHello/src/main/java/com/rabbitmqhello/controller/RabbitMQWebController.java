@@ -6,14 +6,12 @@ import com.rabbitmqhello.service.CrudStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping()
 public class RabbitMQWebController {
 
     @Autowired
     private CrudStudent crudStudent;
-
 
     @Autowired
     private StudentRepo studentRepo;

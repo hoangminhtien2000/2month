@@ -16,6 +16,9 @@ public class RabbitMQListner implements MessageListener,SaveAddress {
     @Autowired
     private AddressRepo addressRepo;
 
+    @Autowired
+    private RabbitMQSender rabbitMQSender;
+
         @RabbitListener(queues = "${receiver.service1.queue}")
     public void onMessage(Message message) {
             String strDtoInput=new String(message.getBody());
@@ -23,6 +26,8 @@ public class RabbitMQListner implements MessageListener,SaveAddress {
             DtoInput dtoInput = gson.fromJson(strDtoInput, DtoInput.class);
 //            saveAddress(dtoInput);
             System.out.println("Receiver from Service1: "+dtoInput);
+//            rabbitMQSender.send(" Send to Service1 Success");
+
     }
 
     @Override

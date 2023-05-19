@@ -44,6 +44,36 @@ public class RabbitMQConfig {
     }
 
 
+    @Value("${send.service2.queue}")
+    String queueService2;
+
+    @Value("${javainuse.rabbitmq.exchange}")
+    String exchange;
+
+    @Value("${javainuse.rabbitmq.routingkey}")
+    private String routingkey;
+
+//    @Bean
+    Queue queueService2() {
+        return new Queue(queueService2, false);
+    }
+
+
+    @Bean
+    DirectExchange exchange() {
+        return new DirectExchange(exchange);
+    }
+
+    @Bean
+    Binding binding( DirectExchange exchange) {
+        return BindingBuilder.bind(queueService2()).to(exchange).with(routingkey);
+    }
+
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
+
 
     //create custom connection factory
 	/*@Bean
