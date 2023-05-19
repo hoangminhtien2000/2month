@@ -9,13 +9,17 @@ import java.util.List;
 
 @Service
 public class StudentDecreaseService implements Comparator<Student>,IStudentDecrease {
+    static String[] level = {"Suat sac", "Tien tien", "Kha", "Trung binh", "Yeu"};
     @Override
-    public int compare(Student hs1, Student hs2) {
+    public int compare(Student student1, Student student2) {
         // Định nghĩa thứ tự sắp xếp
-        String[] level = {"Suat sac", "Tien tien", "Kha", "Trung binh", "Yeu"};
-        int index1 = java.util.Arrays.asList(level).indexOf(hs1.getLevel());
-        int index2 = java.util.Arrays.asList(level).indexOf(hs2.getLevel());
-        return Integer.compare(index1, index2);
+        int index1 = java.util.Arrays.asList(level).indexOf(student1.getLevel());
+        int index2 = java.util.Arrays.asList(level).indexOf(student2.getLevel());
+        int result = Integer.compare(index1, index2);
+        if (result!=0) return result;
+        else {
+            return Integer.compare(student2.getAge(),student1.getAge());
+        }
     }
 
     @Override
