@@ -11,8 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class RoomService {
+public class RoomService implements ClassifyStudent{
 
+    @Override
     public Map<String, Room> findAll(School school) {
         Map<String, Room> roomHashMap = new HashMap<>();
 
@@ -31,4 +32,5 @@ public class RoomService {
         }
         return roomHashMap;
     }
+
 }
