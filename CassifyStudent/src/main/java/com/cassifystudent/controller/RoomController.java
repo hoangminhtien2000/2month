@@ -1,12 +1,12 @@
 package com.cassifystudent.controller;
 
 import com.cassifystudent.model.Room;
-import com.cassifystudent.model.School;
+import com.cassifystudent.model.Student;
 import com.cassifystudent.service.ClassifyStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import java.util.List;
 
 @RestController
 @RequestMapping("/classify")
@@ -15,7 +15,7 @@ public class RoomController {
     private ClassifyStudent classifyStudent;
 
     @GetMapping()
-    public Map<String, Room> findAll(@RequestBody School school) {
-        return classifyStudent.findAll(school);
+    public List<Room> findAll(@RequestBody List<Student> students) {
+        return classifyStudent.findAll(students);
     }
 }

@@ -2,7 +2,6 @@ package com.cassifystudent.model;
 
 import lombok.Data;
 
-
 @Data
 public class ClassRoom {
     private String className;

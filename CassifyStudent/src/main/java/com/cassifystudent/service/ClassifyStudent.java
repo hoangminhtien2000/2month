@@ -1,10 +1,10 @@
 package com.cassifystudent.service;
 
 import com.cassifystudent.model.Room;
-import com.cassifystudent.model.School;
+import com.cassifystudent.model.Student;
 
-import java.util.Map;
+import java.util.List;
 
 public interface ClassifyStudent {
-    Map<String, Room> findAll(School school);
+    List<Room> findAll(List<Student> students);
 }
